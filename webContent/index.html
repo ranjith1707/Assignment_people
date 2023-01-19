@@ -1,0 +1,827 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<style>
+	@font-face {
+font-family: "prelato";
+font-style: normal;
+
+}
+.btn_lined:hover{
+	background-color:#0374C2;
+}
+
+
+</style>
+<link type="text/css" rel="stylesheet" href="https://localcss.zohostatic.com/people/11_JAN_2023_Default_Anand/people3/css/zpfont.css">
+<link rel="stylesheet" type="text/css" href="StyleSheets/zp_css_2.css">
+<link rel="stylesheet" type="text/css" href="StyleSheets/zp_css_1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="JsFiles/home_people.js"></script> 
+</head>
+
+<body style="background-color: #F6F1F0;" onload="setFavorites();showNewHiersList()">
+	
+<div id="wrapper" class="ZPMband">
+	  <nav class="zp_NAV">
+		    <div class="zp_NAV-menu">  
+
+			     <div class="ZPHeadLft">
+				      <a class="ZPLogo DB"> </a>
+			    </div>
+			     <div class="ZPSpanel" id="zpeople_search">
+
+				      <div class="ZPTBox ZPSrbox" id="searchdiv" style="padding: auto;">
+					  <span class="IC-lens S8" id="zpeople_search_pico" align="middle"></span>
+					  <input type="search" class="ZPselect" id="zpeople_search_box" placeholder="Search Employee" value="" name="Search">
+
+				      </div>
+			     </div>
+			     <div class="ZPPimg dropdown" onclick="profile()">
+				  	 <img  data-toggle="dropdown" id="zpeople_userimage" src="https://contacts.localzoho.com/file?ID=73436015&amp;fs=thumb" empid="131611000000310001" imgtype="thumb" >
+			     </div>
+
+			    <ul class="nav top-nav ZPaddPopOver">
+						  
+						   <li><a class="u-link" id="subscriptionLink">Subscription</a> </li>
+						   <li id="zp_maintab_admin">
+						   	  <a data-placement="bottom" title="Settings">
+						     	<i class="IC-setting-l"></i>
+						     </a>
+						   </li>
+					       <li id="zpadv_icon">
+					       	<a class="ZPtitle" data-placement="bottom" title="Refer and Earn"> 
+						       <i class="CR-refer-frnd"></i>
+					       </a>
+
+						</li>
+						<li id="zp_quickadd_form_outer">
+							<a data-toggle="dropdown">
+					     	 <i class="IC-add-r"></i> 
+					     	</a>
+						
+					  </li>
+						<li id="zp_askus">
+							<a class="ZPtitle" title="" data-placement="bottom"  data-toggle="tooltip" data-original-title="Ask a question">
+								<i class="IC-hrc"></i>
+							</a>
+						</li>
+						<li class="dropdown MR10" id="zp_feeds_notifications">
+							<a class="dropdown-toggle" id="zp_ntfn_dropdown" data-toggle="modal">
+								<span data-toggle="tooltip" data-placement="bottom" title="" class="IC-bell-l S20" data-original-title="Notifications">
+									
+								</span> 
+						</a>
+						</li>
+
+				</ul>
+
+
+		</div>	
+	</nav>
+
+	<div class="ZPnavigation" id=zpeople_tabs>
+		
+		<ul class="ZPnavlists" id="zp_maintabs" style="background-color:#1B416A ;float: left;">
+			 <li id="zp_maintab_services" tab="true" issystab="true" class="">
+  				<img class="ZPMic" src="StyleSheets/app.svg">
+						<span class="ZPmtxt">Services</span>
+			</li>
+			<li id="zp_maintab_home" >
+					<i class="ZPMic ZPic-Home"><i class="IC-Home-01 path1"></i>
+					<i class="IC-Home-02 path2"></i>
+			        </i>
+				<span class="ZPmtxt">Home</span>
+			</li>
+			<li id="zp_maintab_selfservice">
+						<i class="ZPMic ZPic-SS"><i class="IC-SS-01 path1"></i>
+						<i class="IC-SS-02 path2"></i>
+					</i>
+					<span class="ZPmtxt">Self-service</span>
+				</li>
+				<li id="zp_maintab_leavetracker">
+					<i class="ZPMic ZPic-L">
+						<i class="IC-L-01 path1"></i>
+						<i class="IC-L-02 path2"></i>
+					</i>
+					<span class="ZPmtxt">Leave Tracker</span>
+				</li>
+				<li id="zp_maintab_timetracker">
+					<i class="ZPMic ZPic-TA"><i class="IC-TA-01 path1"></i>
+					<i class="IC-TA-02 path2"></i>
+				</i>
+				<span class="ZPmtxt">Time Tracker</span>
+			</li>
+			<li id="zp_maintab_attendance">
+				<i class="ZPMic ZPic-AD">
+					<i class="IC-AD-01 path1"></i>
+					<i class="IC-AD-02 path2"></i>
+				</i>
+				<span class="ZPmtxt">Attendance</span>
+			</li>
+			<li id="zp_maintab_organization" >
+				<i class="ZPMic ZPic-ORG">
+					<i class="IC-ORG-01 path1"></i>
+					<i class="IC-ORG-02 path2"></i>
+				</i>
+				<span class="ZPmtxt">Organization</span>
+			</li>
+			<li id="zp_maintab_performance" >
+				<i class="ZPMic ZPic-PA">
+					<i class="IC-PA-01 path1"></i>
+					<i class="IC-PA-02 path2"></i>
+				</i>
+				<span class="ZPmtxt">Performance</span>
+			</li>
+			<li id="zp_maintab_more" class="zp_more">
+				<i class="ZPMic ZPic-More">
+					<i class="IC-More-01 path1"></i>
+					<i class="IC-More-02 path2"></i>
+				</i>
+				<span class="ZPmtxt">More</span>
+			</li>
+			<li id="zp_maintab_reports" class="ZPRprtsTb">
+				<div class="PR">
+					<i class="ZPMic ZPic-Rep">
+						<i class="IC-Rep-01 path1"></i>
+						<i class="IC-Rep-02 path2"></i>
+					</i>
+					<span class="ZPmtxt">Reports</span>
+				</div>
+			</li>
+			
+</ul>
+<div class="ZPnavoption tab-content in" id="zp_main_subtabs" style="background-color: #002A58;"></div>
+	</div>
+
+	<div class="zp_Dtbar" id="page-wrapper" >
+		
+				<div class="main-wrap" id="home-dashboard">
+					<div class="ZPD-Mact zp_CTB">
+						<div class="lft" style="">
+							<div id="ZPD_Top_Att_Stat" class="in CP">Check-in
+								<div class="IC-clock S16" style="padding-top: auto;"></div>
+							</div>
+							<span id="ZPD_Top_Att_THrs">00:00 Hrs</span>
+						</div>
+					
+<div class="rgt">
+				<ul>
+					<li id="zp_d_cdash" data-toggle="tooltip" data-placement="bottom" title="Customize Widgets">
+						<a href="javascript:;">
+							<i class="CR-apps" style="height: auto; width: auto;">
+								<i class="path1"></i>
+								<i class="path2"></i>
+								<i class="path3"></i>
+								<i class="path4"></i>
+							</i>
+						</a>
+					</li>
+					<li id="zp_d_timelog" data-toggle="tooltip" data-placement="bottom" title="Log Time" class="zp_bgN"> 
+						<button class="btn_lined">Log Time</button> 
+					</li>
+					<li id="zp_d_addleave" class="zp_bgN" data-html="true" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Apply Leave">
+						<button class="btn_lined" id="apply_leave">Apply Leave</button>
+					</li>
+					<li id="zp_d_refdash" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Refresh">
+						<a href="javascript:;">
+							<i class="IC-rfesh S20 M0I" style="height: auto; width: auto;">
+								<i class="path1"></i>
+								<i class="path2"></i>
+								<i class="path3"></i>
+								<i class="path4"></i>
+							</i>
+						</a>
+					</li>
+				</ul>
+			</div>
+				</div>
+			</div>
+			
+			</div>
+<div class="Scront" id="zp_d_wrow">
+	<div class="dash-main zp_DHC" id="zp_d_cmain">
+      <div class="zprow ui-sortable" id="zp_d_wrow">
+		<div class="zp-sm-4"  >
+			<div class="dash-col bdayBG BNDiv "><div class="dash-head hicon IC-drag" >
+				<h3 class="dash-title" >Birthday</h3>
+				<span class="cout DN" id="zpdash_widgetcnt"><b></b></span>
+			</div>
+			<div id="BIRTHDAY" class="dash-body ">
+				<div class="ZPNdata " id="">
+					<i class="CR-db-birthday">
+						<i class="path1"></i>
+						<i class="path2"></i>
+						<i class="path3"></i>
+						<i class="path4"></i> 
+					</i><h5 id="zp_views_nodata">No birthdays today</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="zp-sm-4"  style="position: relative; left: 0px; top: 0px;">
+		<div class="dash-col BNDiv ">
+			<div class="dash-head hicon IC-drag">
+				<h3 class="dash-title" >New Hires</h3>
+				<span class="cout DN" id="zpdash_widgetcnt"><b></b></span>
+			</div><div id="NEWHIRES" class="dash-body ">
+				<div class="ZPNdata " id="newHrnodata">
+					<i class="CR-tt-clients">
+						<i class="path1"></i>
+						<i class="path2"></i>
+						<i class="path3"></i>
+						<i class="path4"></i>
+						<i class="path5"></i>
+						<i class="path6"></i>
+						<i class="path7"></i>
+						<i class="path8"></i> 
+					</i><h5 id="zp_views_nodata">No New Joinees in past 15 days.</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="zp-sm-4">
+	<div class="dash-col  ">
+		<div class="dash-head hicon IC-drag">
+		<h3 class="dash-title">Favorites</h3>
+		<span class="cout DN" id="zpdash_widgetcnt"><b></b></span>
+	</div>
+	<ul class="sst-edt dash-body Dfav listView" id="favoritLs">
+		<div class="ZPNdata " id="">
+			<i class="CR-db-nofav">
+				<i class="path1"></i>
+				<i class="path2"></i>
+				<i class="path3"></i>
+				<i class="path4"></i>
+				<i class="path5"></i>
+				<i class="path6"></i>
+				<i class="path7"></i>
+				<i class="path8"></i>
+				 </i><h5 id="zp_views_nodata">No Favorites found.</h5>
+				</div>
+			</ul>
+		</div>
+	</div>
+
+	<div class="zp-sm-4" >
+		<div class="dash-col  ">
+			<div class="dash-head hicon IC-drag" >
+			<h3 class="dash-title" >Quick Links<i class="IC-plus-round" id="zpdash_qlinkadd"></i></h3>
+			<span class="cout DN" id="zpdash_widgetcnt"><b></b></span>
+		</div>
+		<ul class="Qklinks dash-body">
+			<div class="ZPNdata " id="noQckLink">
+				<i class="CR-db-nolink">
+					<i class="path1"></i>
+					<i class="path2"></i>
+					<i class="path3"></i>
+					<i class="path4"></i>
+					<i class="path5"></i>
+					<i class="path6"></i>
+					<i class="path7"></i>
+					<i class="path8"></i> 
+				</i><h5 id="zp_views_nodata">No quick links</h5>
+			</div>
+		</ul>
+	</div>
+</div>
+
+
+<div class="zp-sm-4">
+	<div class="dash-col  "><div class="dash-head hicon IC-drag" >
+		<h3 class="dash-title">Request For Approval</h3>
+		<span class="cout">Pending<span id="zp_pappr_count"><b>0</b></span></span>
+	</div>
+	<ul id="PENDING_APPROVALS" class="Aprvlists dash-body">
+		<div class="ZPNdata " id=""><i class="CR-nodata">
+			<i class="path1">
+				
+			</i><i class="path2"></i>
+			<i class="path3"></i>
+			<i class="path4"></i>
+			<i class="path5"></i>
+			<i class="path6"></i>
+			<i class="path7"></i>
+			<i class="path8"></i> 
+		</i><h5 id="zp_views_nodata">No record found</h5>
+	</div>
+</ul>
+</div>
+</div>
+
+<div class="zp-sm-4" >
+	<div class="dash-col  ">
+		<div class="dash-head hicon IC-drag" ><h3 class="dash-title" >Attendance</h3>
+			
+			<div id="ATTENDANCE" class="dash-body ">
+				<div id="ZPAtt_dashboard_dayCont" style="">
+					<div class="anots">
+						<input type="text" class="tfld" id="ZPAtt_Dash_checkinNotes" placeholder="Add Notes">
+						<button class="in chlodIng" >
+							<div class="SP-timelg"></div>Check-in<span id="ZPAtt_Dash_CurrTime">11:54:58 pm</span>
+						</button>
+					</div>
+					<div class="ctim"><h2 id="ZPAtt_Dash_CurrDayTHrs">00:07 Hrs</h2>
+						<span id="ZPAtt_Dash_CurrDate">11 Jan 2023</span>
+						<em class="org">Late by 13:00 </em>
+					</div>
+					<div class="abar">
+						
+						<div class="atim">General<div class="lf">12AM</div>
+						<div class="rt">12AM</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="zp-sm-4 ZPDBT">
+	<div class="dash-col">
+		<div class="dash-head hicon IC-drag" >
+		<h3 class="dash-title">Announcements<i class="IC-plus-round" id="zpdash_annadd"></i></h3>
+		<span class="cout DN" id="zpdash_widgetcnt"><b></b></span>
+	</div>
+	<ul class="Anlists dash-body">
+		<div class="ZPNdata " id="">
+			<i class="CR-db-anno">
+				<i class="path1"></i>
+				<i class="path2"></i>
+				<i class="path3"></i>
+				<i class="path4"></i>
+				<i class="path5"></i> 
+			</i><h5 id="zp_views_nodata">No Announcement</h5>
+		</div>
+	</ul>
+</div>
+</div>
+
+<div class="zp-sm-4" name="LEAVEREPORT" widget="true" widid="131611000000312130" loaded="true">
+	<div class="dash-col  ">
+		<div class="dash-head hicon IC-drag" >
+			<h3 class="dash-title" title="Leave Report">Leave Report</h3>
+			<span class="cout DN" id="zpdash_widgetcnt"><b></b></span>
+		</div>
+		<div id="LEAVEREPORT" class="dash-body ">
+			<div class="ZPNdata " id="">
+				<i class="CR-nodata-rpt">
+					<i class="path1"></i>
+					<i class="path2"></i>
+					<i class="path3"></i>
+					<i class="path4"></i>
+					<i class="path5"></i>
+					<i class="path6"></i>
+					<i class="path7"></i>
+					<i class="path8"></i> 
+				</i><h5 id="zp_views_nodata">No reports illustrated yet</h5>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="zp-sm-4" >
+	<div class="dash-col  ">
+		<div class="dash-head hicon IC-drag" >
+			<h3 class="dash-title" >Upcoming Holidays</h3>
+			<span class="cout DN" id="zpdash_widgetcnt"><b></b></span>
+		</div>
+		<ul class="hdaylist dash-body">
+			<div class="ZPNdata " id="">
+				<i class="CR-nodata">
+					<i class="path1"></i>
+					<i class="path2"></i>
+					<i class="path3"></i>
+					<i class="path4"></i>
+					<i class="path5"></i>
+					<i class="path6"></i>
+					<i class="path7"></i>
+					<i class="path8"></i> 
+				</i><h5 id="zp_views_nodata">No Data Found</h5>
+			</div>
+		</ul>
+	</div>
+</div>
+
+<div class="zp-sm-6" >
+	<div class="dash-col   Tlogs">
+		<div class="dash-head hicon IC-drag" >
+			<h3 class="dash-title">My Timelogs <i class="IC-plus-round S16 ML5 grn" id="addtimelogicon"></i></h3>
+			<span class="cout" id="dashTimelogTotalHours">Total Hours <b>00:00</b></span>
+		</div>
+		<div id="TIMELOGS" class="dash-body ">
+			<div id="dashboardTimelogsNavBar">
+				<ul class="Dnav">
+					<li id="day8"><b>8</b>Sun</li>
+					<li id="day9" ><b>9</b>Mon</li>
+					<li id="day10" ><b>10</b>Tue</li>
+					<li id="day11"  class="sel"><b>11</b>Wed</li>
+					<li id="day12" ><b>12</b>Thu</li>
+					<li id="day13" ><b>13</b>Fri</li>
+					<li id="day14" ><b>14</b>Sat</li>
+				</ul>
+			</div>
+			<div id="dashboardTimelogs" class="tlogscrl">
+				
+					<div class="ZPNdata " id="">
+						<i class="CR-tt-tlog-view">
+							<i class="path1"></i>
+							<i class="path2"></i>
+							<i class="path3"></i>
+							<i class="path4"></i>
+							<i class="path5"></i>
+							<i class="path6"></i>
+							<i class="path7"></i>
+							<i class="path8"></i> 
+						</i><h5 id="zp_views_nodata">No Data Found</h5>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+	<div class="zp-sm-6">
+		<div class="dash-col  "><div class="dash-head hicon IC-drag" >
+			<h3 class="dash-title" >Cases</h3>
+			
+			<span class="cout">Open<b id="zp_hrcase_count">0</b></span>
+		</div>
+		<div id="HR_CASE_REPORT" class="dash-body OHI Dfav ">
+			<ul class="sst-edt zp_HRcase" id="MReq">
+				<li class="NoFiles">
+					<div class="ZPNdata " id="">
+						<i class="CR-nodata">
+							<i class="path1"></i>
+							<i class="path2"></i>
+							<i class="path3"></i>
+							<i class="path4"></i>
+							<i class="path5"></i>
+							<i class="path6"></i>
+							<i class="path7"></i>
+							<i class="path8"></i>
+							 </i><h5 id="zp_views_nodata">No record found</h5>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+
+		<div class="zp-sm-6" >
+			<div class="dash-col   tsht">
+				<div class="dash-head hicon IC-drag">
+					<h3 class="dash-title">My Timesheets</h3>
+					<span class="cout" id="dashTotalTimesheets"></span>
+				</div>
+				<div id="TIMESHEETS" class="dash-body ">
+					<div class="ZPNdata " id="">
+						<i class="CR-tt-mysubmit">
+							<i class="path1"></i>
+							<i class="path2"></i>
+							<i class="path3"></i>
+							<i class="path4"></i>
+							<i class="path5"></i>
+							<i class="path6"></i>
+							<i class="path7"></i>
+							<i class="path8"></i>
+							 </i><h5 id="zp_views_nodata">No requests submitted</h5>
+							</div>
+						</div>
+					</div>
+				</div>	
+
+				<div class="zp-sm-6" >
+					<div class="dash-col   jobspend Kras">
+						<div class="dash-head hicon IC-drag" >
+							<h3 class="dash-title">My Pending Jobs<i class="IC-plus-round S16 ML5 grn" ></i>
+							</h3>
+							
+						</div>
+						<div id="PENDINGJOBS" class="dash-body ">
+							<div class="ZPNdata " id="">
+								<i class="CR-tt-jobs">
+									<i class="path1"></i>
+									<i class="path2"></i>
+									<i class="path3"></i>
+									<i class="path4"></i>
+									<i class="path5"></i>
+									<i class="path6"></i>
+									<i class="path7"></i>
+									<i class="path8"></i> 
+								</i><h5 id="zp_views_nodata">No record found</h5>
+							</div>
+						</div>
+					</div>
+				</div>	
+
+
+				<div class="zp-sm-6">
+					<div class="dash-col  ">
+						<div class="dash-head hicon IC-drag" >
+							<h3 class="dash-title">Billable / Non Billable (08-Jan-2023 - 14-Jan-2023)</h3>
+						</div>
+						<div id="BILLABLE_NONBILLABLE" class="dash-body nomo Cht ">
+							<div class="ZPNdata " id="">
+								<i class="CR-nodata-rpt">
+									<i class="path1"></i>
+									<i class="path2"></i>
+									<i class="path3"></i>
+									<i class="path4"></i>
+									<i class="path5"></i>
+									<i class="path6"></i>
+									<i class="path7"></i>
+									<i class="path8"></i> 
+								</i><h5 id="zp_views_nodata">No Reports Yet</h5>
+							</div>
+						</div>
+					</div>
+				</div>	
+
+				<div class="zp-sm-6" >
+					<div class="dash-col gls"><div class="dash-head hicon IC-drag" >
+						<h3 class="dash-title">My Goals</h3>
+						
+					</div>
+					<div id="GOALS" class="dash-body ">  
+						<div class="ZPNdata " id="">
+							<i class="CR-pa-goal">
+								<i class="path1"></i>
+								<i class="path2"></i>
+								<i class="path3"></i>
+								<i class="path4"></i>
+								<i class="path5"></i>
+								<i class="path6"></i>
+								<i class="path7"></i>
+								<i class="path8"></i> 
+							</i><h5 id="zp_views_nodata">No record found</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<div class="zp-sm-6" >
+	<div class="dash-col  ">
+		<div class="dash-head hicon IC-drag" >
+			<h3 class="dash-title" >My Pending Tasks</h3>
+			<span class="cout" id="zpdash_widgetcnt"><b>0</b></span>
+		</div>
+		<ul id="MYPENDINGTASKS" class="dash-body">
+		 <div class="ZPNdata " id="">
+		 	<i class="CR-set-task-search">
+		 		<i class="path1"></i>
+		 		<i class="path2"></i>
+		 		<i class="path3"></i>
+		 		<i class="path4"></i>
+		 		<i class="path5"></i>
+		 		<i class="path6"></i>
+		 		<i class="path7"></i>
+		 		<i class="path8"></i> 
+		 	</i><h5 id="zp_views_nodata">There are no tasks available.</h5>
+		 </div>
+		</ul>
+	</div>
+</div>
+
+<div class="zp-sm-6">
+	<div class="dash-col  ">
+		<div class="dash-head hicon IC-drag" >
+		<h3 class="dash-title" title="My Files">My Files</h3>
+		<span class="cout" id="cnt_box">Total Files<b>0</b></span>
+		
+	</div>
+	<div id="FILES" class="dash-body OHI ">
+		<ul class="dash-tabs" role="tablist">
+			<li class="active" id="cf" data-toggle="tab">Organization Files</li>
+			<li class="" id="hf" data-toggle="tab">Employee Files</li>
+		</ul>
+		<div class="tab-content">
+			<ul class="filelist tab-pane active" id="CF"  style="">
+				<div class="ZPNdata " id="">
+					<i class="CR-nodata">
+						<i class="path1"></i>
+						<i class="path2"></i>
+						<i class="path3"></i>
+						<i class="path4"></i>
+						<i class="path5"></i>
+						<i class="path6"></i> 
+					</i><h5 id="zp_views_nodata">No Files Found</h5>
+				</div>
+			</ul>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="zp-sm-4" >
+		<div class="dash-col BNDiv ">
+			<div class="dash-head hicon IC-drag" >
+				<h3 class="dash-title" >Work Anniversary</h3>
+				
+			</div>
+			<div id="WORK_ANNIVERSARY" class="dash-body ">
+				<div class="ZPNdata " id="">
+					<i class="CR-nodata">
+						<i class="path1"></i>
+						<i class="path2"></i>
+						<i class="path3"></i>
+						<i class="path4"></i>
+						<i class="path5"></i>
+						<i class="path6"></i>
+						 </i><h5 id="zp_views_nodata">No work anniversaries today</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="zp-sm-4">
+				<div class="dash-col BNDiv "><div class="dash-head hicon IC-drag" >
+					<h3 class="dash-title">Wedding Anniversary</h3>
+					
+				</div>
+				<div id="WEDDING_ANNIVERSARY" class="dash-body ">
+					<div class="ZPNdata " id="">
+						<i class="CR-nodata">
+							<i class="path1"></i>
+							<i class="path2"></i>
+							<i class="path3"></i>
+							<i class="path4"></i>
+							<i class="path5"></i>
+							<i class="path6"></i> 
+						</i><h5 id="zp_views_nodata">No wedding anniversaries today</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="zp-sm-4">
+			<div class="dash-col  ">
+				<div class="dash-head hicon IC-drag" >
+					<h3 class="dash-title" >Employee Engagement</h3>
+					
+				</div>
+				<div id="ENPS_SURVEY" class="dash-body P20 "></div>
+			</div>
+		</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="zp_user_information" class="zp_mdl prof_mdl in" tabindex="-1">
+				<div class="zp_mdl-cnt">
+					<div class="zp_mdl-bdy Nomdlhead" id="zp_modal_body">
+						<div class="ZPUserAcc">
+							<i data-dismiss="modal" class="IC-cls-1px red S21 CP ZPUclse" onclick="closeProfile();"></i>
+							<div class="ZPprofdt">
+								<img  id="profimg">
+								<h4 id= userName_h>1&nbsp;-&nbsp;Ranjith</h4>
+								<a id="userId_a">ranjithkumar.ar@zohotest.com</a>
+								<div class="ZPMyacc">
+									<a class="btn btn-default btn-myAcc" target="_blank" href="https://accounts.localzoho.com">My Account</a>
+									<a href="/Logout.do" class="ZPSOut">Sign Out</a>
+								</div>
+							</div>
+							<div class="ZPMultiOrg"> 
+								<div id="orgListView">
+									<a>
+										<span id="ZPChangeOrg">Zoho<i class="IC-Setting-02"></i></span>
+									</a> 
+									<ul id="ZPChangeOrgUL" class="dropdown-menu" style="display: none;"> 
+										<li class="manage">
+											<span id="ZPManageOrg">
+												<a href="/organizations" target="_blank">
+													<i>Manage Organization</i>
+												</a>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="ZPSelthemes">
+								<h4>Themes</h4>
+								<div class="ZPdeftheme">
+									<span>Menu Color</span>
+									<div class="ZPThemeOpt">
+										<div class="onoffswitch">
+											<input name="onoffswitch" class="onoffswitch-checkbox" id="toggle_theme" type="checkbox" checked="checked">
+											<label class="onoffswitch-label" for="toggle_theme">
+												<span class="onoffswitch-inner">
+													<i></i>
+													<i></i>
+													<i></i>
+												</span>
+												<span class="onoffswitch-switch"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="ZPdeftheme">
+									<span>Theme Color</span>
+									<ul class="ZPClists ZPThemeOpt" id="zp_selection_theme">
+										<li class="ZPTC1 active" theme="0">
+											<a>
+												<b class="IC-tick"></b>
+											</a>
+										</li>
+										<li class="ZPTC2" theme="1"></li>
+										<li class="ZPTC3" theme="2"></li>
+										<li class="ZPTC4" theme="3"></li>
+									</ul>
+								</div>
+								<div class="ZPdeftheme">
+									<a href="javascript:;" id="zp_organizetab"></a>
+								</div>
+							</div>
+							<div class="ZSPlinks"> 
+								<ul>
+									<li>
+									 <i class="CR-getstart S18">
+									  <i class="path1"></i>
+									  <i class="path2"></i>
+									  <i class="path3"></i> 
+									</i> 
+									<a onclick="GettingStarted.init()" id="gettingStartedbtn" href="#admin/gettingStarted" target="_blank">Getting Started</a>
+									 </li>
+									 <li> 
+									 	<i class="CR-help S18">
+									 		<i class="path1"></i>
+									 		<i class="path2"></i>
+									 		<i class="path3"></i>
+									 	</i> 
+									 	<a target="_blank" href="//www.zoho.com/people/help/adminguide/overview.html">Help</a> 
+									 </li>
+									 <li> 
+									 	<i class="CR-support S18">
+									 		<i class="path1"></i>
+									 		<i class="path2"></i>
+									 		<i class="path3"></i>
+									 	</i> 
+									 	<a href="javascript:;" onclick="ZPeople.ContactSupport.openPopUp();"> Contact Support</a> 
+									 </li>
+									 <li> 
+									 	<i class="CR-wnew S18">
+									 		<i class="path1"></i>
+									 		<i class="path2"></i>
+									 		<i class="path3"></i>
+									 	</i><a target="_blank" href="//www.zoho.com/people/whats-new.html">What's New</a></li>
+									 	<li> 
+									 		<i class="CR-hr S18">
+									 			<i class="path1"></i>
+									 			<i class="path2"></i>
+									 			<i class="path3"></i>
+									 			<i class="path4"></i>
+									 			<i class="path5"></i>
+									 		</i>
+									 		<a target="_blank" href="//creatorapp.zohopublic.com/zohopeople/zoho-people-community-invite/form-perma/Invite_Form/hAzbPxdXbNh0gCCCt4zXBW1HWXKaBRROhSxTOaxs7fuEvEX7kKOwK1B5rpRnM0NY0fDp8Z3S7zACWA6F1mMqtrtJ2DH2bT8xqBgF?src=inapp">Join the HR Community</a>
+									 	</li>
+									 </ul> 
+									</div>
+								</div>
+							</div>
+							<div class="zp_mdl-ftr">
+								<ul class="ZPMFlinks"><li> 
+									<a target="_blank" href="//play.google.com/store/apps/details?id=com.zoho.people"> 
+										<i class="CR-android">
+											<i class="path1"></i>
+											<i class="path2"></i>
+										</i>
+									</a>
+								</li>
+								<li>
+									<a target="_blank" href="//itunes.apple.com/in/app/zoho-people-smartest-way-to/id680525956?mt=8" ;=""> 
+										<i class="CR-apple">
+											<i class="path1"></i>
+											<i class="path2"></i>
+										</i> 
+									</a> 
+								</li>
+								<li>
+									<a target="_blank" href="//www.zoho.com/people/free-webinar.html"> 
+										<i class="CR-video">
+											<i class="path1"></i>
+											<i class="path2"></i>
+											<i class="path3"></i>
+											<i class="path4"></i>
+										</i> 
+									</a>
+								</li>
+								<li> 
+									<a target="_blank" href="//youtube.com/channel/UCvBTxIHDnBW8ip1cdB0x8zg"> 
+										<i class="CR-ytube">
+											<i class="path1"></i>
+											<i class="path2"></i>
+											<i class="path3"></i>
+										</i> 
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
