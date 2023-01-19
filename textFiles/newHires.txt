@@ -1,0 +1,29 @@
+[
+{
+"name":"Ruby Richards",
+"userID":"82",
+"posting":"Office-Service",
+"place":"mumbai",
+"cell":"523",
+"mobile":"91-76483224",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+},
+{
+"name":"Ben Denisan",
+"userID":"52",
+"posting":"Head Of The Department",
+"location":"New York",
+"cell":"876",
+"mobile":"91-86734583",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+},
+{
+"name":"Jack Sparow",
+"userID":"12",
+"posting":"Pirate",
+"location":"Carapion",
+"cell":"213",
+"mobile":"91-87365893",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+}
+]

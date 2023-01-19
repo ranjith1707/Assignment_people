@@ -1,0 +1,41 @@
+[
+{
+"name":"Ruby Richards",
+"phone":"1-53333337",
+"cell":"899",
+"empId":"43",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+},
+{
+"name":"Charles Mavric",
+"phone":"1-2134443443",
+"cell":"5734",
+"empId":"45",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+},{
+"name":"Aleo Kirb",
+"phone":"91-6656789",
+"cell":"53446",
+"empId":"46",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+},{
+"name":"Ruby Richards",
+"phone":"1-53333337",
+"cell":"899",
+"empId":"89",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+},
+{
+"name":"Charles Mavric",
+"phone":"1-2134443443",
+"cell":"5734",
+"empId":"12",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+},{
+"name":"Aleo Kirb",
+"phone":"91-6656789",
+"cell":"53446",
+"empId":"34",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+}
+]

@@ -1,0 +1,6 @@
+{
+"userName":"Ranjithkumar A",
+"userId":"ranjithkumr.ar@zohotest.com",
+"organization":"Zoho Corparation",
+"image":"http://localhost:8080/People/images/user4.jpeg"
+}
